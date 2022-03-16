@@ -25,7 +25,7 @@ const Home: NextPage<Props> = ({fileContent}) => {
 export const getStaticProps: GetStaticProps = async ({locale = 'de'}) => ({
     props: {
         fileContent: loadMarkdown('index', locale),
-        ...(await serverSideTranslations(locale, ['common', 'footer'])),
+        ...(await serverSideTranslations(locale, ['footer'])),
     }
 })
 export default Home

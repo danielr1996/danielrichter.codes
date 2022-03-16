@@ -2,6 +2,7 @@ import type {GetStaticProps, NextPage} from 'next'
 import Head from 'next/head'
 import {loadMarkdown} from "../lib/markdown";
 import {Markdown} from "../components/Markdown";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 type Props = {
     fileContent: string
@@ -20,6 +21,10 @@ const Home: NextPage<Props> = ({fileContent}) => {
 }
 
 
-export const getStaticProps: GetStaticProps = async ({locale = 'de'}) => ({props: {fileContent: loadMarkdown('imprint', locale)}})
-
+export const getStaticProps: GetStaticProps = async ({locale = 'de'}) => ({
+    props: {
+        fileContent: loadMarkdown('imprint', locale),
+        ...(await serverSideTranslations(locale, ['footer'])),
+    }
+})
 export default Home
