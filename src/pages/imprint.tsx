@@ -5,16 +5,16 @@ import {Markdown} from "../components/Markdown";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 type Props = {
-    fileContent: string
+    content: any
 }
-const Home: NextPage<Props> = ({fileContent}) => {
+const Home: NextPage<Props> = ({content}) => {
     return (
         <>
             <Head>
-                <title key="title">Daniel Richter - Impressum</title>
+                <title key="title">Daniel Richter - {content.title}</title>
             </Head>
             <div className="prose dark:prose-invert mx-auto mt-10">
-                <Markdown>{fileContent}</Markdown>
+                <Markdown>{content.content}</Markdown>
             </div>
         </>
     )
@@ -23,7 +23,7 @@ const Home: NextPage<Props> = ({fileContent}) => {
 
 export const getStaticProps: GetStaticProps = async ({locale = 'de'}) => ({
     props: {
-        fileContent: loadMarkdown('imprint', locale),
+        content: loadMarkdown('imprint', locale),
         ...(await serverSideTranslations(locale, ['footer'])),
     }
 })
