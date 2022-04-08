@@ -1,5 +1,5 @@
-import github from '../assets/img/github.png'
-import stackoverflow from '../assets/img/stackoverflow.svg'
+import github from 'assets/img/github.png'
+import stackoverflow from 'assets/img/stackoverflow.svg'
 import Link from "next/link";
 import { useTranslation } from 'next-i18next';
 

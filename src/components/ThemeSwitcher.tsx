@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
-import darkmode from '../assets/img/darkmode.svg'
-import lightmode from '../assets/img/lightmode.svg'
+import darkmode from 'assets/img/darkmode.svg'
+import lightmode from 'assets/img/lightmode.svg'
+
 export const ThemeSwitcher = () => {
     const [mode, setMode] = useState('')
 

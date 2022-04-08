@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import logo from '../assets/img/logo.png'
-import {LanguageSwitcher} from "./LanguageSwitcher";
-import {ThemeSwitcher} from "./ThemeSwitcher";
+import logo from 'assets/img/logo.png'
+import {LanguageSwitcher} from "components/LanguageSwitcher";
+import {ThemeSwitcher} from "components/ThemeSwitcher";
 
 export const Header = () => {
 
