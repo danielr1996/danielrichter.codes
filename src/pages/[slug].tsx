@@ -13,16 +13,15 @@ export type PageData = DataObject & {
 }
 
 const Page: NextPage<PageData> = ({title, sections}) => {
-    return (
-        <>
+    const publishedSections = sections.filter(section=>section.published || section.published === undefined)
+    return <>
             <Head>
                 <title key="title">Daniel Richter - {title}</title>
             </Head>
             <div className="mt-10">
-                {sections.map(section=><Section key={section.id} {...section} />)}
+                {publishedSections.map(section=><Section key={section.id} {...section} />)}
             </div>
         </>
-    )
 }
 
 export default Page

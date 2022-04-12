@@ -11,11 +11,13 @@
   "dependencies": {
     "@types/js-yaml": "^4.0.5",
     "@types/uuid": "^8.3.4",
+    "country-flag-icons": "^1.4.25",
     "js-yaml": "^4.1.0",
     "next": "12.1.0",
     "next-i18next": "^10.5.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-flagkit": "^2.0.4",
     "react-markdown": "^8.0.1",
     "uuid": "^8.3.2"
   },

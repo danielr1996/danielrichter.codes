@@ -9,7 +9,7 @@ export type DataObject = {
     // name!: string
     // created_at!: string
     // updated_at!: string
-    // published!: boolean
+    published?: boolean
 }
 
 // export type BlogPage = PageData &{
