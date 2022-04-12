@@ -6,7 +6,6 @@ export default function Layout({children}: any) {
 
     return (<>
             <Head>
-                {/* A JSX comment */}
                 <title key="title">Daniel Richter</title>
                 <meta name="description" content="My personal website"/>
                 <link rel="icon" href="/favicon.png"/>

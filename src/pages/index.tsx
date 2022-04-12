@@ -1,32 +1,22 @@
-import type {GetStaticPaths, NextPage} from 'next'
-import Head from 'next/head'
+import type {NextPage} from 'next'
 import {GetStaticProps} from "next";
-import {Markdown} from "components/Markdown";
-import {getPage, Page} from "lib/graphql";
+import {getPage} from "lib/markdown";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import Page, {PageData} from "pages/[slug]"
 
-const Home: NextPage<Page> = ({ content}) => {
-    return (
-        <>
-            <Head>
-                <title key="title">Daniel Richter</title>
-            </Head>
-            <div className="prose dark:prose-invert mx-auto mt-10">
-                <Markdown>{content}</Markdown>
-            </div>
-        </>
-    )
-}
+
+
+const Home: NextPage<PageData> = (props) => <Page {...props} />
+export default Home
 
 export const getStaticProps: GetStaticProps = async ({locale = 'de'}) => {
-    // const props = await getPage(locale, 'home')
+    const props = await getPage(locale, 'home')
     return {
         props: {
-            // ...props,
+            ...props,
             ...(await serverSideTranslations(locale, ['footer'])),
         }
     }
 }
 
 
-export default Home

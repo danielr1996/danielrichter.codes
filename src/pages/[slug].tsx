@@ -1,45 +1,49 @@
 import type {GetStaticPaths, NextPage} from 'next'
 import Head from 'next/head'
 import {GetStaticProps} from "next";
-import {Markdown} from "components/Markdown";
-import {getAvailablePages, getPage, Page} from "lib/graphql";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {Section, SectionData} from "components/sections/Section"
+import {getAvailablePages, getPage} from "lib/markdown"
+import {DataObject, TranslatedString} from "lib/model"
 
-const Slug: NextPage<Page> = ({Title, content}) => {
+export type PageData = DataObject & {
+    slug: string,
+    title: TranslatedString
+    sections: SectionData[]
+}
+
+const Page: NextPage<PageData> = ({title, sections}) => {
     return (
         <>
             <Head>
-                <title key="title">Daniel Richter - {Title}</title>
+                <title key="title">Daniel Richter - {title}</title>
             </Head>
-            <div className="prose dark:prose-invert mx-auto mt-10">
-                <Markdown>{content}</Markdown>
+            <div className="mt-10">
+                {sections.map(section=><Section key={section.id} {...section} />)}
             </div>
         </>
     )
 }
 
+export default Page
+
 export const getStaticProps: GetStaticProps = async ({locale = 'de',params}) => {
-    // let slug = ''
-    // if(params){
-    //     slug = params.slug as string
-    // }
-    // const props = await getPage(locale, slug)
+    // @ts-ignore
+    const props = getPage(locale, params.slug)
     return {
         props: {
-            // ...props,
+            ...props,
             ...(await serverSideTranslations(locale, ['footer'])),
         }
     }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    // const paths = await getAvailablePages()
+    const paths = await getAvailablePages()
     return {
-        // paths,
-        paths: [],
+        paths,
         fallback: false
     };
 }
 
 
-export default Slug
