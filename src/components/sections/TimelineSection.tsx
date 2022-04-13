@@ -12,12 +12,7 @@ export const TimelineSection: FunctionComponent<TimelineSectionData> = ({station
     <section className="container mx-auto">
         <ul className={`grid grid-cols-[1fr_25px_1fr]`}>
             {stations.map((station,i) =>
-                /**
-                 * row-start-1 row-start-2 row-start-3 row-start-4 row-start-5
-                 * @param station
-                 * @param i
-                 */
-                <li className={`col-span-1 odd:col-start-1 even:col-start-3 row-start-${i+1}`} key={station.id}>
+                <li className="col-span-1 odd:col-start-1 even:col-start-3" style={{gridRowStart: i+1}} key={station.id}>
                     <StationCard {...station}/>
                 </li>
             )}
