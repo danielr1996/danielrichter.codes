@@ -32,12 +32,16 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
             {
                 type: 'TimelineSection',
                 id: uuid(),
-                published: false,
                 stations: [
                     {
                         id: uuid(),
                         startDate: '2022-01-01',
                         title: 'Headtrip GmbH',
+                        position: {
+                            de: 'Fullstack Entwickler',
+                            en: 'Fullstack Developer'
+                        },
+                        tags: ['Next.js','React','Tailwind CSS'],
                         content: {
                             de: `Seit Anfang 2022 bin ich bei der [Headtrip GmbH](https://headtrip.eu/) als Fullstack Entwickler angestellt und kümmere mich dort um die 
                             Betreuung der Website eines Kunden`,
@@ -47,18 +51,30 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                     {
                         id: uuid(),
                         startDate: '2020-01-01',
+                        endDate: '2021-12-31',
                         title: 'TeamBank AG',
+                        tags: ['PHP','Wordpress','WebComponents'],
+                        position: {
+                            de: 'Fullstack Entwickler',
+                            en: 'Fullstack Developer'
+                        },
                         content: {
-                            de: `Von 2020 bis 2022 arbeitete ich bei der [TeamBank AG](https://www.teambank.de/) als Frontend Entwickler wo ich für ein internes Schulungsportal
+                            de: `Von 2020 bis 2022 arbeitete ich bei der [TeamBank AG](https://www.teambank.de/) als Fullstack Entwickler wo ich für ein internes Schulungsportal
                             der Partnerbanken sowie ein Informationsportal für Partnerbankmitarbeiter zustädig war`,
-                            en: `Von 2020 bis 2022 arbeitete ich bei der [TeamBank AG](https://www.teambank.de/) als Frontend Entwickler wo ich für ein internes Schulungsportal
+                            en: `Von 2020 bis 2022 arbeitete ich bei der [TeamBank AG](https://www.teambank.de/) als Fullstack Entwickler wo ich für ein internes Schulungsportal
                             der Partnerbanken sowie ein Informationsportal für Partnerbankmitarbeiter zustädig war`
                         }
                     },
                     {
                         id: uuid(),
-                        startDate: '2018-01-01',
+                        startDate: '2018-01-08',
+                        endDate: '2019-12-31',
                         title: 'Bundesagentur für Arbeit',
+                        tags: ['Angular','Java','Spring'],
+                        position: {
+                            de: 'Frontend Entwickler',
+                            en: 'Frontend Developer'
+                        },
                         content: {
                             de: `Nachdem ich 2018 meine Ausbildung bei der [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) abgeschlossen hatte, habe ich dort bis 2020 im Projekt gE-Online an
                             der Digitalisierung der Anträge aus dem SGB II Bereich mitgewirkt`,
@@ -69,7 +85,13 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                     {
                         id: uuid(),
                         startDate: '2015-10-01',
+                        endDate: '2018-01-18',
                         title: 'Bundesagentur für Arbeit',
+                        tags: ['Angular','Java','Spring'],
+                        position: {
+                            de: 'Azubi',
+                            en: 'Trainee'
+                        },
                         content: {
                             de: `Von 2015 bis 2018 habe ich meine Ausbildung zum Fachinformatiker für Anwendungsentwicklung bei der [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) absolviert. 
                             Dabei habe ich in mehreren Abteilungen die Programmierung mit Java und Javascript sowie die Anbindung an Datenbanken mit SQL gelernt`,
@@ -79,7 +101,13 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                     },
                     {
                         id: uuid(),
-                        startDate: '2015-06-1',
+                        startDate: '2007-09-01',
+                        endDate: '2015-06-1',
+                        position: {
+                            de: 'Schüler',
+                            en: 'Student'
+                        },
+                        tags: ['HTML','CSS','Javascript'],
                         title: 'Abitur',
                         content: {
                             de: `2015 habe ich mein Abitur am [PPG Hersbruck](https://gymnasium-hersbruck.de/) abgeschlossen`,

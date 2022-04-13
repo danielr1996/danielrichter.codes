@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
     darkMode: 'class',
     content: [
@@ -8,6 +10,8 @@ module.exports = {
         colors: {
             transparent: 'transparent',
             current: 'currentColor',
+            slate: colors.slate,
+            white: '#fff',
             'bluegray-dark': '#0f172a',
             'bluegray': '#1e293b',
             'bluegray-light': '#334155',
@@ -16,7 +20,13 @@ module.exports = {
             'zinc-400':'#a1a1aa',
             'zinc-300':'#d4d4d8',
         },
-        extend: {},
+        // screens: {
+        //     'sm': 'var(--breakpoint-sm)',
+        //     'md': 'var(--breakpoint-md)',
+        //     'lg': 'var(--breakpoint-lg)',
+        //     'xl': 'var(--breakpoint-xl)',
+        //     '2xl': 'var(--breakpoint-2xl)',
+        // }
     },
     plugins: [require('@tailwindcss/typography')],
 }

@@ -33,6 +33,7 @@ export const getPage = (locale: string, slug: string): PageData => {
                         ...section,
                         stations: section.stations.map(station=>({
                             ...station,
+                            position: translateLocale(station.position),
                             content: translateLocale(station.content)
                         }))
                     }
