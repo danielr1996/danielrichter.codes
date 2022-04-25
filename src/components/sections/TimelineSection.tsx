@@ -15,8 +15,8 @@ export type TimelineSectionData = CommonSectionData & {
 
 export const TimelineSection: FunctionComponent<TimelineSectionData> = ({stations}) => {
     return <>
-        <section className="container mx-auto grid grid-cols-12 mb-32 ">
-            <ul className="col-span-12 xl:col-span-10 xl:col-start-2 grid grid-cols-[100px_1fr] md:grid-cols-[1fr_100px_1fr]">
+        <section className="container mx-auto grid grid-cols-12 mb-32">
+            <ul className="col-span-12 xl:col-span-10 xl:col-start-2 grid grid-cols-[60px_1fr] md:grid-cols-[1fr_60px_1fr]">
                 {stations.map((station, i) =>
                     <li className="contents group" key={station.id}>
                         <div
@@ -38,7 +38,7 @@ export const TimelineSection: FunctionComponent<TimelineSectionData> = ({station
 }
 
 type Station = DataObject & {
-    startDate: any,
+    startDate: Temporal.PlainDate,
     endDate?: Temporal.PlainDate,
     title: string,
     content: TranslatedString,
@@ -55,13 +55,13 @@ const StationCard: FunctionComponent<Station> = ({startDate, endDate, position, 
                 className="bg-primary md:group-odd:hidden triangle-left w-[1.25rem] h-[2rem] shrink-0 relative top-[1.25rem] left-[1px]"/>
             <div className="p-5 bg-primary grow">
                 <h1 className="text-xl mb-2 pl-2">{title}</h1>
-                <div className="mb-4 text-sm py-1 px-2 flex justify-between bg-primary-light">
+                <div className="mb-4 text-sm py-1 px-2 flex flex-wrap justify-between bg-primary-light">
                     <span><FontAwesomeIcon icon={faSuitcase}/> {position}</span>
                     <span><FontAwesomeIcon icon={faCalendar}/> {startDate.toLocaleString(language)} - {endDate?.toLocaleString(language) || t('present')}</span>
                 </div>
                 <Markdown className="mb-4 pl-2">{content}</Markdown>
-                <ul className="text-white">
-                    {tags?.map(tag => <li className="inline mr-1 py-1 px-2 rounded bg-secondary-dark text-gray-900"
+                <ul className="text-white flex flex-wrap gap-y-1.5">
+                    {tags?.map(tag => <li className="mr-1 py-1 px-2 rounded bg-secondary-dark text-gray-900"
                                           key={tag}>{tag}</li>)}
                 </ul>
             </div>
