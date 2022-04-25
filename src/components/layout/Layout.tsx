@@ -10,8 +10,8 @@ export default function Layout({children}: any) {
             <meta name="description" content="My personal website"/>
             <link rel="icon" href="/favicon.png"/>
         </Head>
-        <div className="flex flex-col h-screen-min bg-primary-dark text-gray-300">
-            <div className="gradient">
+        <div className="flex flex-col  bg-primary-dark text-gray-300">
+            <div className="gradient h-screen-min">
                 <Header/>
                 <main className="flex-grow">
                     {children}

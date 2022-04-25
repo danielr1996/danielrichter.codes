@@ -32,6 +32,7 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
             },
             {
                 type: 'TimelineSection',
+                published: false,
                 id: uuid(),
                 stations: [
                     {
