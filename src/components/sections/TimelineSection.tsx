@@ -13,9 +13,10 @@ export type TimelineSectionData = CommonSectionData & {
     stations: Station[]
 }
 
-export const TimelineSection: FunctionComponent<TimelineSectionData> = ({stations}) => {
+export const TimelineSection: FunctionComponent<TimelineSectionData> = ({stations, headline}) => {
     return <>
         <section className="container mx-auto grid grid-cols-12 mb-32">
+            <h1 className="col-span-12 text-3xl text-center mb-8">{headline}</h1>
             <ul className="col-span-12 xl:col-span-10 xl:col-start-2 grid grid-cols-[60px_1fr] md:grid-cols-[1fr_60px_1fr]">
                 {stations.map((station, i) =>
                     <li className="contents group" key={station.id}>

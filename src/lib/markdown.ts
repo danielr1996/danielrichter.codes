@@ -6,7 +6,11 @@ function isTranslatedString(str: string | TranslatedString): str is TranslatedSt
     return typeof str === 'object'
 }
 
-const translate = (locale: locale) => (str: string | TranslatedString): string => {
+const translate = (locale: locale) => (str: string | TranslatedString | undefined): string => {
+    if(str === undefined){
+        return ''
+    }
+
     if (isTranslatedString(str)) {
         // @ts-ignore
         return str[locale]
@@ -31,6 +35,7 @@ export const getPage = (locale: string, slug: string): PageData => {
                 case 'TimelineSection':
                     return {
                         ...section,
+                        headline: translateLocale(section?.headline),
                         stations: section.stations.map(station=>({
                             ...station,
                             position: translateLocale(station.position),

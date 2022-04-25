@@ -33,6 +33,10 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
             {
                 type: 'TimelineSection',
                 id: uuid(),
+                headline: {
+                    de: 'Mein Werdegang',
+                    en: 'My Career'
+                },
                 stations: [
                     {
                         id: uuid(),
@@ -46,7 +50,7 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                         content: {
                             de: `Seit Anfang 2022 bin ich bei der [Headtrip GmbH](https://headtrip.eu/) als Fullstack Entwickler angestellt und kümmere mich dort um die 
                             Betreuung der Website eines Kunden`,
-                            en: `Since 2022 I work at [Headtrip GmbH](https://headtrip.eu/) as a fullstack developer where I'm responsible for the website of our customer`
+                            en: `Since 2022 I work at [Headtrip GmbH](https://headtrip.eu/) as a fullstack developer where I take care of one of our customers website`
                         }
                     },
                     {
@@ -60,10 +64,9 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                             en: 'Fullstack Developer'
                         },
                         content: {
-                            de: `Von 2020 bis 2022 arbeitete ich bei der [TeamBank AG](https://www.teambank.de/) als Fullstack Entwickler wo ich für ein internes Schulungsportal
+                            de: `Von 2020 bis 2022 arbeitete ich bei der [TeamBank AG](https://www.teambank.de/) als Fullstack Entwickler und Application Manager wo ich für ein internes Schulungsportal
                             der Partnerbanken sowie ein Informationsportal für Partnerbankmitarbeiter zustädig war`,
-                            en: `Von 2020 bis 2022 arbeitete ich bei der [TeamBank AG](https://www.teambank.de/) als Fullstack Entwickler wo ich für ein internes Schulungsportal
-                            der Partnerbanken sowie ein Informationsportal für Partnerbankmitarbeiter zustädig war`
+                            en: `From 2020 to 2022 I worked at [TeamBank AG](https://www.teambank.de/) as a Fullstack Developer and Application Manager where I was responsible for an internal learning management system as well as an informational website for employees of associated banks`
                         }
                     },
                     {
@@ -77,10 +80,9 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                             en: 'Frontend Developer'
                         },
                         content: {
-                            de: `Nachdem ich 2018 meine Ausbildung bei der [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) abgeschlossen hatte, habe ich dort bis 2020 im Projekt gE-Online an
+                            de: `Nachdem ich 2018 meine Ausbildung bei der [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) abgeschlossen hatte, habe ich dort bis 2020 im Projekt "gE-Online" an
                             der Digitalisierung der Anträge aus dem SGB II Bereich mitgewirkt`,
-                            en: `Nachdem ich 2018 meine Ausbildung bei der [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) abgeschlossen hatte, habe ich dort bis 2020 im Projekt gE-Online an
-                            der Digitalisierung der Anträge aus dem SGB II Bereich mitgewirkt`
+                            en: `After finishing my education at [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) in 2018 I was involved in the project "gE-Online" where we digitalized forms used in filing for unemployment benefits`
                         }
                     },
                     {
@@ -96,8 +98,7 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                         content: {
                             de: `Von 2015 bis 2018 habe ich meine Ausbildung zum Fachinformatiker für Anwendungsentwicklung bei der [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) absolviert. 
                             Dabei habe ich in mehreren Abteilungen die Programmierung mit Java und Javascript sowie die Anbindung an Datenbanken mit SQL gelernt`,
-                            en: `Von 2015 bis 2018 habe ich meine Ausbildung zum Fachinformatiker für Anwendungsentwicklung bei der [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) absolviert. 
-                            Dabei habe ich in mehreren Abteilungen die Programmierung mit Java und Javascript sowie die Anbindung an Datenbanken mit SQL gelernt`
+                            en: `From 2015 to 2018 I got my education as "Fachinformatiker für Anwendungsentwicklung" (IT specialist for application development) at the [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) where I learned programming with Java and Javascript as well as connecting applications to databases using SQL`
                         }
                     },
                     {
@@ -112,7 +113,7 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                         title: 'Paul-Pfinzing Gymnasium',
                         content: {
                             de: `2015 habe ich mein Abitur am [PPG Hersbruck](https://gymnasium-hersbruck.de/) abgeschlossen`,
-                            en: `2015 I took my Abitur (A-level) at the [PPG Hersbruck](https://gymnasium-hersbruck.de/)`
+                            en: `In 2015 I finished my "Abitur" (A-level) at the [PPG Hersbruck](https://gymnasium-hersbruck.de/)`
                         }
                     },
                 ]
