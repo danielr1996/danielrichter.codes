@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async ({locale = 'de',params}) => 
     return {
         props: {
             ...props,
-            ...(await serverSideTranslations(locale, ['footer'])),
+            ...(await serverSideTranslations(locale, ['footer','timelinesection'])),
         }
     }
 }

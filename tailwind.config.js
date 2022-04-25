@@ -6,27 +6,28 @@ module.exports = {
         "./src/pages/**/*.{js,ts,jsx,tsx}",
         "./src/components/**/*.{js,ts,jsx,tsx}",
     ],
+    safelist: [
+        {
+            pattern: /row-start-(\d)/
+        }
+    ],
     theme: {
-        colors: {
-            transparent: 'transparent',
-            current: 'currentColor',
-            slate: colors.slate,
-            white: '#fff',
-            'bluegray-dark': '#0f172a',
-            'bluegray': '#1e293b',
-            'bluegray-light': '#334155',
-            'gray-400': '#9ca3af',
-            'zinc-500':'#71717a',
-            'zinc-400':'#a1a1aa',
-            'zinc-300':'#d4d4d8',
+        extend: {
+            colors: {
+                transparent: 'transparent',
+                current: 'currentColor',
+                'primary-dark': colors.slate['900'],
+                'primary': colors.slate['800'],
+                'primary-light': colors.slate['700'],
+                'secondary-dark': colors.sky['500'],
+                'secondary': colors.sky['400'],
+                'secondary-light': colors.sky['300'],
+                'accent-dark': colors.amber['500'],
+                'accent': colors.amber['400'],
+                'accent-light': colors.amber['300'],
+                gray: colors.gray,
+            },
         },
-        // screens: {
-        //     'sm': 'var(--breakpoint-sm)',
-        //     'md': 'var(--breakpoint-md)',
-        //     'lg': 'var(--breakpoint-lg)',
-        //     'xl': 'var(--breakpoint-xl)',
-        //     '2xl': 'var(--breakpoint-2xl)',
-        // }
     },
     plugins: [require('@tailwindcss/typography')],
 }

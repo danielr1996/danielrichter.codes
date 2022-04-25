@@ -1,5 +1,6 @@
 import { v4 as uuid } from 'uuid'
 import {PageData} from "pages/[slug]"
+import {Temporal} from "@js-temporal/polyfill"
 
 export const pages: PageData[] = [
     {
@@ -35,7 +36,7 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                 stations: [
                     {
                         id: uuid(),
-                        startDate: '2022-01-01',
+                        startDate: Temporal.PlainDate.from('2022-01-01'),
                         title: 'Headtrip GmbH',
                         position: {
                             de: 'Fullstack Entwickler',
@@ -50,8 +51,8 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                     },
                     {
                         id: uuid(),
-                        startDate: '2020-01-01',
-                        endDate: '2021-12-31',
+                        startDate: Temporal.PlainDate.from('2020-01-01'),
+                        endDate: Temporal.PlainDate.from('2021-12-31'),
                         title: 'TeamBank AG',
                         tags: ['PHP','Wordpress','WebComponents'],
                         position: {
@@ -67,8 +68,8 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                     },
                     {
                         id: uuid(),
-                        startDate: '2018-01-08',
-                        endDate: '2019-12-31',
+                        startDate: Temporal.PlainDate.from('2018-01-08'),
+                        endDate: Temporal.PlainDate.from('2019-12-31'),
                         title: 'Bundesagentur für Arbeit',
                         tags: ['Angular','Java','Spring'],
                         position: {
@@ -84,8 +85,8 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                     },
                     {
                         id: uuid(),
-                        startDate: '2015-10-01',
-                        endDate: '2018-01-18',
+                        startDate: Temporal.PlainDate.from('2015-10-01'),
+                        endDate: Temporal.PlainDate.from('2018-01-18'),
                         title: 'Bundesagentur für Arbeit',
                         tags: ['Angular','Java','Spring'],
                         position: {
@@ -101,14 +102,14 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                     },
                     {
                         id: uuid(),
-                        startDate: '2007-09-01',
-                        endDate: '2015-06-1',
+                        startDate: Temporal.PlainDate.from('2007-09-01'),
+                        endDate: Temporal.PlainDate.from('2015-06-01'),
                         position: {
                             de: 'Schüler',
                             en: 'Student'
                         },
                         tags: ['HTML','CSS','Javascript'],
-                        title: 'Abitur',
+                        title: 'Paul-Pfinzing Gymnasium',
                         content: {
                             de: `2015 habe ich mein Abitur am [PPG Hersbruck](https://gymnasium-hersbruck.de/) abgeschlossen`,
                             en: `2015 I took my Abitur (A-level) at the [PPG Hersbruck](https://gymnasium-hersbruck.de/)`

@@ -4,5 +4,5 @@ import {FunctionComponent} from "react";
 
 export const Markdown: FunctionComponent<{className?: string}> = ({children, className}) =>{
     // @ts-ignore
-    return <ReactMarkdown className={`prose max-w-none dark:prose-invert ${className}`} remarkPlugins={[remarkGfm]}>{children}</ReactMarkdown>
+    return <ReactMarkdown className={`prose max-w-none prose-invert ${className}`} remarkPlugins={[remarkGfm]}>{children}</ReactMarkdown>
 }

@@ -7,7 +7,7 @@ export const Footer = () => {
     const { t } = useTranslation('footer');
 
     return (<>
-        <footer className=" bg-zinc-300 dark:bg-bluegray-light p-3 flex items-center justify-between text-xs">
+        <footer className="p-3 flex items-center justify-between text-xs">
             <div>
                 <span className="mr-3 inline-flex items-center">
                     <img src={github.src} alt="" className="inline mr-1 h-4"/>
