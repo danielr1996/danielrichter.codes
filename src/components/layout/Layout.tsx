@@ -8,18 +8,18 @@ export default function Layout({children}: any) {
         <Head>
             <title key="title">Daniel Richter</title>
             <meta name="description" content="My personal website"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover,target-densityDpi=device-dpi" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
             <link rel="icon" href="/favicon.png"/>
         </Head>
-        <div className="flex flex-col  bg-primary-dark text-gray-300">
-            <div className="gradient h-screen-min">
+        <div className="bg-primary-dark text-gray-300">
+            <div className="flex flex-col gradient h-screen-min">
                 <Header/>
                 <main className="flex-grow">
                     {children}
                 </main>
                 <Footer/>
+                <Breakpoint/>
             </div>
-            <Breakpoint/>
         </div>
     </>
 }
