@@ -1,38 +1,31 @@
 import type {GetStaticPaths, NextPage} from 'next'
-import Head from 'next/head'
-import {GetStaticProps} from "next";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {Section, SectionData} from "components/sections/Section"
-import {getAvailablePages, getPage} from "lib/markdown"
-import {DataObject, TranslatedString} from "lib/model"
+import {GetStaticProps} from "next"
+import {serverSideTranslations} from "next-i18next/serverSideTranslations"
+import {getAvailablePages, getMenu, getPage, Menu} from "lib/yaml"
+import {Page, PageData} from "components/pages/Page"
+import React from "react"
 
-export type PageData = DataObject & {
-    slug: string[],
-    title: TranslatedString
-    sections: SectionData[]
-}
+export const FooterMenuContext = React.createContext<Menu>({entries:[]})
+export const HeaderMenuContext = React.createContext<Menu>({entries:[]})
 
-const Page: NextPage<PageData> = ({title, sections}) => {
-    const publishedSections = sections.filter(section=>section.published || section.published === undefined)
-    return <>
-            <Head>
-                <title key="title">Daniel Richter - {title}</title>
-            </Head>
-            <div className="mt-10">
-                {publishedSections.map(section=><Section key={section.id} {...section} />)}
-            </div>
-        </>
-}
+const Slug: NextPage<PageData & {footer: any, header: any}> = (props) =>
+<FooterMenuContext.Provider value={props.footer}>
+    <HeaderMenuContext.Provider value={props.header}>
+        <Page {...props} />
+    </HeaderMenuContext.Provider>
+</FooterMenuContext.Provider>
+export default Slug
 
-export default Page
-
-export const getStaticProps: GetStaticProps = async ({locale = 'de',params}) => {
-    // @ts-ignore
-    const props = getPage(locale, params.slug)
+export const getStaticProps: GetStaticProps = async ({locale = 'de', params}) => {
+    const page = getPage(locale, params?.slug as string[])
+    const footer = getMenu(locale, 'footer')
+    const header = getMenu(locale, 'header')
     return {
         props: {
-            ...props,
-            ...(await serverSideTranslations(locale, ['footer','timelinesection'])),
+            ...page,
+            footer,
+            header,
+            ...(await serverSideTranslations(locale, ['footer', 'timelinesection'])),
         }
     }
 }
@@ -42,7 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths,
         fallback: false
-    };
+    }
 }
 
 

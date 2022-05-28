@@ -24,7 +24,8 @@
     "react-dom": "17.0.2",
     "react-flagkit": "^2.0.4",
     "react-markdown": "^8.0.1",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "yaml": "^2.1.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",

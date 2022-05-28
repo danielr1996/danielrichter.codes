@@ -1,10 +1,11 @@
 import github from 'assets/img/github.png'
 import stackoverflow from 'assets/img/stackoverflow.svg'
 import Link from "next/link";
-import { useTranslation } from 'next-i18next';
+import {useContext} from "react"
+import {FooterMenuContext} from "pages/[...slug]"
 
 export const Footer = () => {
-    const { t } = useTranslation('footer');
+    const menu = useContext(FooterMenuContext)
 
     return (<>
         <footer className="p-3 flex flex-col sm:flex-row items-center justify-between text-xs">
@@ -24,9 +25,8 @@ export const Footer = () => {
                 className="underline" href="https://tailwindcss.com/">tailwindcss</a></span>
             </div>
             <div className="inline-flex items-center ">
-                <Link href="/imprint">{t('imprint')}</Link>
+                {menu.entries.map(({link, title})=><Link key={link} href={link}>{title}</Link>)}
             </div>
-
         </footer>
 
     </>)
