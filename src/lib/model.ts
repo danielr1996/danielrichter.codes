@@ -11,25 +11,3 @@ export type DataObject = {
     // updated_at!: string
     published?: boolean
 }
-
-// export type BlogPage = PageData &{
-//     category: string
-//     tags: string[]
-// }
-
-// export type HeroSection = Section &{
-//     type: 'HeroSection'
-//     slogans: TranslatedString[]
-// }
-//
-//
-// export type ColumnSection = Section & {
-//     type: 'ColumnSection'
-//     columns: Column[]
-// }
-//
-// export type Column = DataObject & {
-//     icon: string
-//     headline: TranslatedString
-//     subheadline: TranslatedString
-// }

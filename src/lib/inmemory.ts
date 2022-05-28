@@ -1,11 +1,11 @@
 import { v4 as uuid } from 'uuid'
-import {PageData} from "pages/[slug]"
+import {PageData} from "pages/[...slug]"
 import {Temporal} from "@js-temporal/polyfill"
 
 export const pages: PageData[] = [
     {
         id: uuid(),
-        slug: 'home',
+        slug: ['home'],
         title: 'Home',
         sections: [
             {
@@ -121,8 +121,8 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
         ]
     },
     {
+        slug: ['imprint'],
         id: uuid(),
-        slug: 'imprint',
         title: {
             'en': 'Imprint',
             'de': 'Impressum',
@@ -160,4 +160,21 @@ Website: danielr1996.de  `,
             }
         ]
     },
+    {
+        id: uuid(),
+        slug: ['projects','arbeitszeit'],
+        title: {
+            'en': 'Projects - Arbeitszeit',
+            'de': 'Projekte - Arbeitszeit',
+        },
+        sections: []
+    },{
+        id: uuid(),
+        slug: ['projects'],
+        title: {
+            'en': 'Projects',
+            'de': 'Projekte',
+        },
+        sections: []
+    }
 ]

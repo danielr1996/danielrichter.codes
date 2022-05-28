@@ -1,6 +1,6 @@
 import {pages} from "lib/inmemory"
 import {locale, TranslatedString} from "lib/model"
-import {PageData} from "pages/[slug]"
+import {PageData} from "pages/[...slug]"
 
 function isTranslatedString(str: string | TranslatedString): str is TranslatedString {
     return typeof str === 'object'
@@ -18,10 +18,9 @@ const translate = (locale: locale) => (str: string | TranslatedString | undefine
     return str
 }
 
-export const getPage = (locale: string, slug: string): PageData => {
+export const getPage = (locale: string, slug: string[]): PageData => {
     const translateLocale = translate(locale as locale)
-
-    const page = pages.filter(page => page.slug === slug)[0]
+    const page = pages.filter(page => page.slug.every((val, i)=>val === slug[i]))[0]
     return {
         ...page,
         title: translateLocale(page.title),
@@ -49,8 +48,6 @@ export const getPage = (locale: string, slug: string): PageData => {
     }
 }
 export const getAvailablePages = async () => {
-    return [
-        {params: {slug: 'imprint'}, locale: 'de'},
-        {params: {slug: 'imprint'}, locale: 'en'},
-    ]
+    const { i18n: {locales} } = require('../../next-i18next.config');
+    return pages.flatMap(({slug})=>locales.map((locale:string)=>( {params: {slug}, locale})))
 }

@@ -7,7 +7,7 @@ import {getAvailablePages, getPage} from "lib/markdown"
 import {DataObject, TranslatedString} from "lib/model"
 
 export type PageData = DataObject & {
-    slug: string,
+    slug: string[],
     title: TranslatedString
     sections: SectionData[]
 }
