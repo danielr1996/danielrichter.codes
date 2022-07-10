@@ -41,6 +41,7 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                     {
                         id: uuid(),
                         startDate: Temporal.PlainDate.from('2022-01-01'),
+                        endDate: Temporal.PlainDate.from('2022-06-30'),
                         title: 'Headtrip GmbH',
                         position: {
                             de: 'Fullstack Entwickler',
@@ -48,9 +49,9 @@ In my spare time I like to play Volleyball, ride the bike or go hiking. When the
                         },
                         tags: ['Next.js','React','Tailwind CSS'],
                         content: {
-                            de: `Seit Anfang 2022 bin ich bei der [Headtrip GmbH](https://headtrip.eu/) als Fullstack Entwickler angestellt und kümmere mich dort um die 
+                            de: `Von Anfang bis Mitte 2022 war ich bei der [Headtrip GmbH](https://headtrip.eu/) als Fullstack Entwickler angestellt und kümmerte mich dort um die 
                             Betreuung der Website eines Kunden`,
-                            en: `Since 2022 I work at [Headtrip GmbH](https://headtrip.eu/) as a fullstack developer where I take care of one of our customers website`
+                            en: `From the beginning to mid 2022 I worked at [Headtrip GmbH](https://headtrip.eu/) as a fullstack developer where I took care of one of our customers website`
                         }
                     },
                     {
