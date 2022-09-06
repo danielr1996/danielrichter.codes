@@ -6,7 +6,7 @@ function isTranslatedString(str: string | TranslatedString): str is TranslatedSt
     return typeof str === 'object'
 }
 
-const translate = (locale: locale) => (str: string | TranslatedString | undefined): string => {
+export const translate = (locale: locale) => (str: string | TranslatedString | undefined): string => {
     if(str === undefined){
         return ''
     }
@@ -20,7 +20,7 @@ const translate = (locale: locale) => (str: string | TranslatedString | undefine
 
 export const getPage = (locale: string, slug: string[]): PageData => {
     const translateLocale = translate(locale as locale)
-    const page = pages.filter(page => page.slug.every((val, i)=>val === slug[i]))[0]
+    const page = pages.filter(page =>page.slug.length === slug.length &&  page.slug.every((val, i)=>val === slug[i]))[0]
     return {
         ...page,
         title: translateLocale(page.title),
