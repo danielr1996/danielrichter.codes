@@ -17,7 +17,6 @@ const menu: MenuData[] = [
 ]
 
 export const Header = () => {
-
     return (<>
         <header className="p-3 flex items-center justify-between">
             <div className="flex items-center">
