@@ -161,7 +161,7 @@ Rothenburger Straße 253
 ## Kontakt:  
 
 E-Mail: danielrichter@posteo.de  
-Webseite: danielr1996.de  `,
+Webseite: window.location.hostname  `,
                     en: `# Imprint
 
 ## Provider:  
@@ -173,7 +173,7 @@ Rothenburger Straße 253
 ## Contact:
 
 E-Mail: danielrichter@posteo.de  
-Website: danielr1996.de  `,
+Website: window.location.hostname  `,
                 }
             }
         ]
