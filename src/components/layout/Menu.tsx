@@ -16,6 +16,6 @@ type Props = {
 export const Menu: FunctionComponent<Props> = ({menu})=>{
     const { i18n: {language} } = useTranslation('menu');
     return <>
-        {menu.map(({title,link})=><span key={link} className="text-xl mr-3"><Link href={link}>{translate(language as locale)(title)}</Link></span>)}
+        {menu.map(({title,link})=><span key={link} className="text-xl mr-3"><Link href={link}>{String(translate(language as locale)(title))}</Link></span>)}
     </>
 }

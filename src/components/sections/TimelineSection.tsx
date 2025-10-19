@@ -38,16 +38,32 @@ export const TimelineSection: FunctionComponent<TimelineSectionData> = ({station
     </>
 }
 
+function isDateRange(value: any): value is DateRange {
+    return value && typeof value === "object" && "start" in value;
+}
+
+function isDate(value: any): value is Date {
+    return value.date instanceof Temporal.PlainDate;
+}
+
+type DateFormat = {
+    date: Temporal.PlainDate,
+    format: any
+}
+
+type DateRange = {
+    start: DateFormat
+    end?: DateFormat
+}
 type Station = DataObject & {
-    startDate: Temporal.PlainDate,
-    endDate?: Temporal.PlainDate,
+    date?: DateFormat | DateRange,
     title: string,
     content: TranslatedString,
-    position: TranslatedString,
+    position?: TranslatedString,
     tags?: string[],
 }
 
-const StationCard: FunctionComponent<Station> = ({startDate, endDate, position, tags, title, content}) => {
+const StationCard: FunctionComponent<Station> = ({date, position, tags, title, content}) => {
     const {t, i18n: {language}} = useTranslation('timelinesection')
 
     return <>
@@ -57,8 +73,18 @@ const StationCard: FunctionComponent<Station> = ({startDate, endDate, position, 
             <div className="p-5 bg-primary grow">
                 <h1 className="text-xl mb-2 pl-2">{title}</h1>
                 <div className="mb-4 text-sm py-1 px-2 flex flex-wrap justify-between bg-primary-light">
-                    <span><FontAwesomeIcon icon={faSuitcase}/> {position}</span>
-                    <span><FontAwesomeIcon icon={faCalendar}/> {startDate.toLocaleString(language)} - {endDate?.toLocaleString(language) || t('present')}</span>
+                    {/*<span><FontAwesomeIcon icon={faSuitcase}/> {position}</span>*/}
+                    {(()=>{
+                        if (date === undefined) {
+                            return <></>;
+                        } else if (isDateRange(date)) {
+                            return <span><FontAwesomeIcon
+                                icon={faCalendar}/> {date.start?.date.toLocaleString(language,date.start?.format)} - {date.end?.date?.toLocaleString(language,date.end?.format) || t('present')}</span>;
+                        } else if (isDate(date)) {
+                            return <span><FontAwesomeIcon
+                                icon={faCalendar}/> {date.date.toLocaleString(language,date.format)}</span>
+                        }
+                    })()}
                 </div>
                 <Markdown className="mb-4 pl-2">{content}</Markdown>
                 <ul className="text-white flex flex-wrap gap-y-1.5">

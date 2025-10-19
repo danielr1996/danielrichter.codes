@@ -1,137 +1,111 @@
-import { v4 as uuid } from 'uuid'
+import {v4 as uuid} from 'uuid'
 import {PageData} from "pages/[...slug]"
 import {Temporal} from "@js-temporal/polyfill"
+
 
 export const pages: PageData[] = [
     {
         id: uuid(),
         slug: ['about'],
         title: {
-            de:'Über mich',
+            de: 'Über mich',
             en: 'About me'
         },
         sections: [
             {
-                type: 'MarkdownSection',
-                id: uuid(),
-                content: {
-                    de: `# Daniel Richter
-
-Hi 👋, ich bin Daniel, Software Entwickler aus Deutschland spezialisiert auf moderne Frontend Technologien wie React, Next.js & tailwindcss.
-Privat beschäftige ich mich aber auch mit Backend Entwicklung in Go und NodeJS oder Deno sowie DevOps Themen wie Kubernetes.
-
-Bei allem was ich tue liegt mir die Qualität und Wartbarkeit des Codes am Herzen, außerdem versuche ich immer am Zahn der Zeit zu bleiben und mich mit den neusten Entwicklungen auseinanderzusetzten.
-
-In meiner Freizeit spiele ich gerne Volleyball, fahre Fahrrad oder gehe Wandern. Wenn das Wetter mal nicht so gut ist experimentiere ich mit meinem 3D Drucker und Mikrocontrollern.`,
-                    en: `# Daniel Richter
-
-Hi 👋, I'm Daniel, a software developer from germany specialized on modern frontend technologies like React, Next.js & tailwindcss.
-Personally I also do a lot of backend development with Go & NodeJS or Deno as well as DevOps topics like Kubernetes
-
-While doing this I always watch out for code qualitiy and maintainability, furthermore I try to keep up to date with the newest developments in the IT industry.
-
-In my spare time I like to play Volleyball, ride the bike or go hiking. When the weather is too bad I like to experiment with my 3D printer and microcontrollers.`,
-                }
-            },
-            {
                 type: 'TimelineSection',
                 id: uuid(),
-                headline: {
-                    de: 'Mein Werdegang',
-                    en: 'My Career'
-                },
+                // headline: {
+                //     de: 'Mein Werdegang',
+                //     en: 'My Career'
+                // },
                 stations: [
                     {
                         id: uuid(),
-                        startDate: Temporal.PlainDate.from('2022-07-01'),
-                        title: 'viind GmbH',
-                        position: {
-                            de: 'Fullstack Entwickler',
-                            en: 'Fullstack Developer'
-                        },
-                        tags: ['Next.js','React', 'Nest.js'],
+                        title: 'OpenFahrplan',
+                        date: {date: Temporal.PlainDate.from("2025-10-15"), format: {month: 'short', year: 'numeric'}},
+                        tags: ["ÖPNV", "Python", "Pandas","GTFS"],
                         content: {
-                            de: `Seit Mitte 2022 arbeite ich bei der [viind GmbH](https://www.viind.com/) und erstelle Kommunikationslösungen für Behörden und Unternehmen`,
-                            en: `Since mid 2022 I work for [viind GmbH](https://www.viind.com/) and create communication solutions for administrations and  enterprises`
+                            de: `Um mich mit den Technologien hinter Fahrgastinformationssystemen vertraut zu machen, 
+                            habe ich [OpenFahrplan](https://github.com/danielr1996/openfahrplan) entwickelt - eine 
+                            Webanwendung, um aus einem GTFS-Datensatz Haltestellen und Linienverläufe darzustellen und 
+                            Verbindungen zu suchen.`,
+                            en: `To get familiar with the technologies behind passenger information systems, I developed 
+                            [OpenFahrplan](https://github.com/danielr1996/openfahrplan) - a web application that visualizes
+                             stops and routes from a GTFS dataset and allows users to search for connections.`
                         }
                     },
                     {
                         id: uuid(),
-                        startDate: Temporal.PlainDate.from('2022-01-01'),
-                        endDate: Temporal.PlainDate.from('2022-06-30'),
-                        title: 'Headtrip GmbH',
-                        position: {
-                            de: 'Fullstack Entwickler',
-                            en: 'Fullstack Developer'
-                        },
-                        tags: ['Next.js','React','Tailwind CSS'],
+                        title: 'Freifunk Südstadtfest',
+                        date: {date: Temporal.PlainDate.from("2025-06-05"), format: {month: 'short', year: 'numeric'}},
+                        tags: ["WiFi", "Networking"],
                         content: {
-                            de: `Von Anfang bis Mitte 2022 war ich bei der [Headtrip GmbH](https://headtrip.eu/) als Fullstack Entwickler angestellt und kümmerte mich dort um die 
-                            Betreuung der Website eines Kunden`,
-                            en: `From the beginning to mid 2022 I worked at [Headtrip GmbH](https://headtrip.eu/) as a fullstack developer where I took care of one of our customers website`
+                            de: `Im Rahmen meiner Initiative bei [Freifunk Franken](https://wiki.freifunk-franken.de) habe ich dabei geholfen das
+                            [Südstadtfest Nürnberg mit WLAN zu versorgen.](https://wiki.freifunk-franken.de/w/Standorte/Nuernberg/S%C3%BCdstadtfestival)`,
+                            en: `As part of my involvement with [Freifunk Franken](https://wiki.freifunk-franken.de),
+                             I helped provide Wi-Fi coverage for the [Südstadtfest Nürnberg](https://wiki.freifunk-franken.de/w/Standorte/Nuernberg/S%C3%BCdstadtfestival)`
                         }
                     },
                     {
                         id: uuid(),
-                        startDate: Temporal.PlainDate.from('2020-01-01'),
-                        endDate: Temporal.PlainDate.from('2021-12-31'),
-                        title: 'TeamBank AG',
-                        tags: ['PHP','Wordpress','WebComponents'],
-                        position: {
-                            de: 'Fullstack Entwickler',
-                            en: 'Fullstack Developer'
-                        },
+                        title: 'Nat64',
+                        date: {date: Temporal.PlainDate.from("2025-05-26"), format: {month: 'short', year: 'numeric'}},
+                        tags: ["NAT64", "Networking","DNS","IPv4","IPv6"],
                         content: {
-                            de: `Von 2020 bis 2022 arbeitete ich bei der [TeamBank AG](https://www.teambank.de/) als Fullstack Entwickler und Application Manager wo ich für ein internes Schulungsportal
-                            der Partnerbanken sowie ein Informationsportal für Partnerbankmitarbeiter zustädig war`,
-                            en: `From 2020 to 2022 I worked at [TeamBank AG](https://www.teambank.de/) as a Fullstack Developer and Application Manager where I was responsible for an internal learning management system as well as an informational website for employees of associated banks`
+                            de: `Um mein Heimnetz auf IPv6-only umzustellen, habe ich ein eigenes [öffentliches NAT64 Gateway](https://nat64.danielrichter.codes/) eingerichtet`,
+                            en: `To transition my home network to IPv6 only I setup my own [public NAT64 Gateway](https://nat64.danielrichter.codes/)`,
                         }
                     },
                     {
                         id: uuid(),
-                        startDate: Temporal.PlainDate.from('2018-01-08'),
-                        endDate: Temporal.PlainDate.from('2019-12-31'),
-                        title: 'Bundesagentur für Arbeit',
-                        tags: ['Angular','Java','Spring'],
-                        position: {
-                            de: 'Frontend Entwickler',
-                            en: 'Frontend Developer'
-                        },
+                        title: 'Minecraft',
+                        date: {start:{date: Temporal.PlainDate.from("2020-01-01"), format: {year: 'numeric'}}},
+                        tags: ["Java", "Kubernetes"],
                         content: {
-                            de: `Nachdem ich 2018 meine Ausbildung bei der [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) abgeschlossen hatte, habe ich dort bis 2020 im Projekt "gE-Online" an
-                            der Digitalisierung der Anträge aus dem SGB II Bereich mitgewirkt`,
-                            en: `After finishing my education at [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) in 2018 I was involved in the project "gE-Online" where we digitalized forms used in filing for unemployment benefits`
+                            de: `Zusammen mit meinen Freunden spiele ich unser eigenes Minecraft Modpack 
+                            [Ingenium: Create & Beyond](https://github.com/block-buddies/ingenium-create-and-beyond) und 
+                            hoste dafür unseren Server mit [Kubernetes](https://github.com/itzg/docker-minecraft-server).
+                            `,
+                            en: `Together with my friends, I play our custom Minecraft modpack [Ingenium: Create & Beyond](https://github.com/block-buddies/ingenium-create-and-beyond) 
+                            and host our servers using [Kubernetes](https://github.com/itzg/docker-minecraft-server).`
                         }
                     },
                     {
                         id: uuid(),
-                        startDate: Temporal.PlainDate.from('2015-10-01'),
-                        endDate: Temporal.PlainDate.from('2018-01-18'),
-                        title: 'Bundesagentur für Arbeit',
-                        tags: ['Angular','Java','Spring'],
-                        position: {
-                            de: 'Azubi',
-                            en: 'Trainee'
-                        },
+                        title: 'arbeitszeit',
+                        date: {date: Temporal.PlainDate.from("2022-05-22"), format: {month: 'short', year: 'numeric'}},
+                        tags: ["NextJS"],
                         content: {
-                            de: `Von 2015 bis 2018 habe ich meine Ausbildung zum Fachinformatiker für Anwendungsentwicklung bei der [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) absolviert. 
-                            Dabei habe ich in mehreren Abteilungen die Programmierung mit Java und Javascript sowie die Anbindung an Datenbanken mit SQL gelernt`,
-                            en: `From 2015 to 2018 I got my education as "Fachinformatiker für Anwendungsentwicklung" (IT specialist for application development) at the [Bundesagentur für Arbeit](https://www.arbeitsagentur.de/) where I learned programming with Java and Javascript as well as connecting applications to databases using SQL`
+                            de: `Während meiner Beschäftigung bei einem Startup habe ich [arbeitszeit](https://github.com/danielr1996/arbeitszeit) entwicklet, ein kleines Tool
+                            um die tägliche Arbeitszeit in Form einer ablaufenden Uhr darzustellen.`,
+                            en: `During my time at a startup, I developed [arbeitszeit](https://github.com/danielr1996/arbeitszeit) - a small tool that visualizes daily working time as a countdown clock.`,
                         }
                     },
                     {
                         id: uuid(),
-                        startDate: Temporal.PlainDate.from('2007-09-01'),
-                        endDate: Temporal.PlainDate.from('2015-06-01'),
-                        position: {
-                            de: 'Schüler',
-                            en: 'Student'
+                        title: 'Finsight',
+                        date: {
+                            start: {date: Temporal.PlainDate.from("2018-01-01"), format: {year: 'numeric'}},
+                            end: {date: Temporal.PlainDate.from("2024-01-01"), format: {year: 'numeric'}},
                         },
-                        tags: ['HTML','CSS','Javascript'],
-                        title: 'Paul-Pfinzing Gymnasium',
+                        tags: ["HBCI", "Java"],
                         content: {
-                            de: `2015 habe ich mein Abitur am [PPG Hersbruck](https://gymnasium-hersbruck.de/) abgeschlossen`,
-                            en: `In 2015 I finished my "Abitur" (A-level) at the [PPG Hersbruck](https://gymnasium-hersbruck.de/)`
+                            de: `Um mich besser mit meinen Finanzen auseinandersetzen zu können und mehr über Finanz-IT zu erfahren habe ich [Finsight](https://github.com/danielr1996/finsight) entwickelt, eine Java Anwendung um Kontoauszüge über HBCI abzurufen und daraus Statistiken zu erstellen.`,
+                            en: `To better understand my finances and learn more about financial IT, I built [Finsight](https://github.com/danielr1996/finsight) - a Java application that retrieves bank statements via HBCI and generates statistics from them.`,
+                        }
+                    },
+                    {
+                        id: uuid(),
+                        title: 'Ehrenamt',
+                        date: {
+                            start: {date: Temporal.PlainDate.from("2012-01-01"), format: {year: 'numeric'}},
+                            end: {date: Temporal.PlainDate.from("2014-01-01"), format: {year: 'numeric'}},
+                        },
+                        content: {
+                            de: `Während meiner Schulzeit betreute ich im Rahmen der Nachbarschaftshilfe ehrenamtlich einmal 
+                             im Monat Senioren im Umgang mit PCs.`,
+                            en: `During my school years, I volunteered once a month as part of a neighborhood assistance program, helping seniors use their PCs.`
                         }
                     },
                 ]
@@ -160,8 +134,8 @@ Rothenburger Straße 253
 
 ## Kontakt:  
 
-E-Mail: danielrichter@posteo.de  
-Webseite: danielr1996.de  `,
+E-Mail: me@danielrichter.codes  
+Website:  www.danielrichter.codes`,
                     en: `# Imprint
 
 ## Provider:  
@@ -172,8 +146,8 @@ Rothenburger Straße 253
 
 ## Contact:
 
-E-Mail: danielrichter@posteo.de  
-Website: danielr1996.de  `,
+E-Mail: me@danielrichter.codes  
+Website:  www.danielrichter.codes`,
                 }
             }
         ]
@@ -200,7 +174,7 @@ Website: danielr1996.de  `,
     },
     {
         id: uuid(),
-        slug: ['dev','react-mock-hooks'],
+        slug: ['dev', 'react-mock-hooks'],
         title: {
             'en': 'React: mock hooks in unit tests',
             'de': 'React: hook in Unittests mocken',
@@ -210,7 +184,7 @@ Website: danielr1996.de  `,
                 type: 'MarkdownSection',
                 id: uuid(),
                 content: {
-                    de:`# React: Hooks in Unittests mocken
+                    de: `# React: Hooks in Unittests mocken
 > Dieser Artikel wurde noch nicht auf Deutsch übersetzt
 
 Recently I came across the situation where I built a custom hook to check for some keycloak rules that used 
