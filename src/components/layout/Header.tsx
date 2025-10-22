@@ -1,6 +1,7 @@
 import logo from 'assets/img/logo.png'
 import {LanguageSwitcher} from "components/lib/LanguageSwitcher";
 import {Menu, MenuData} from "components/layout/Menu";
+import {ThemeSwitcher} from "../lib/ThemeSwitcher";
 
 const menu: MenuData[] = [
     {
@@ -10,10 +11,10 @@ const menu: MenuData[] = [
         },
         link: '/'
     },
-    {
-        title: '/dev/',
-        link: '/dev'
-    },
+    // {
+    //     title: '/dev/',
+    //     link: '/dev'
+    // },
 ]
 
 export const Header = () => {
@@ -22,8 +23,6 @@ export const Header = () => {
             <div className="flex items-center">
                 <img alt="logo" src={logo.src} className="mr-3 w-10 ml-3 rounded-full"/>
                 <Menu menu={menu}/>
-                {/*<span className="text-sm mr-3"><Link href="/aboutme">Über mich</Link></span>*/}
-                {/*<span className="text-sm mr-3"><Link href="/projects">Projekte</Link></span>*/}
             </div>
             <div className="mr-3">
                 {/*<ThemeSwitcher />*/}
