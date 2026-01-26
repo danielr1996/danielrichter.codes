@@ -75,7 +75,7 @@ export const pages: PageData[] = [
                         id: uuid(),
                         title: 'arbeitszeit',
                         date: {date: Temporal.PlainDate.from("2022-05-22"), format: {month: 'short', year: 'numeric'}},
-                        tags: ["NextJS"],
+                        tags: ["NextJS","NestJS","React"],
                         content: {
                             de: `Während meiner Beschäftigung bei einem Startup habe ich [arbeitszeit](https://github.com/danielr1996/arbeitszeit) entwicklet, ein kleines Tool
                             um die tägliche Arbeitszeit in Form einer ablaufenden Uhr darzustellen.`,
